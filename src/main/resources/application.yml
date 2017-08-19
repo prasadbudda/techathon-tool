@@ -1,0 +1,31 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        id.new_generator_mappings: false
+        format_sql: true
+---
+
+spring:
+  datasource:
+    url: jdbc:mysql://10.118.43.70:3306/techathon
+    username: root
+    password: root
+    tomcat:
+      max-wait: 20000
+      max-active: 50
+      max-idle: 20
+      min-idle: 15
+      
+---
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type.descriptor.sql.BasicBinder: TRACE
+---
+server:
+  port: 8180  
